@@ -1,0 +1,30 @@
+
+#修改port在重新运行该application，可以获得两个不同port的微服务
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:7900/eureka/
+
+spring:
+  application:
+    name: orderservice
+server:
+  port: 8200
+
+#userservice:
+#  ribbon:
+
+#   NFLoadBalencerRuleClassName: com.netflix.loadbalancer.RandomRule
+#ribbon:
+#      eager-load:
+#        enabled: true
+#        clients:
+#          - userservice
+#          - orderservice
+#feign:
+#  client:
+#    config:
+#      default:
+#        loggerLevel: FULL
